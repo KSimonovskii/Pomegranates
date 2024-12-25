@@ -15,7 +15,7 @@ public class PomegranateAppl {
                 .sum();
 
         int maxSeeds = boxes.stream()
-                .mapToInt(Box::getMaxOfSeeds)
+                .mapToInt(Box::getSumOfSeeds)
                 .max()
                 .orElse(0);
 
@@ -24,7 +24,7 @@ public class PomegranateAppl {
 
         System.out.println("=== Boxes with maximum quantity of seeds ===");
         boxes.stream()
-                .filter(box -> box.getMaxOfSeeds() == maxSeeds)
+                .filter(box -> box.getSumOfSeeds() == maxSeeds)
                 .map(Box::getName)
                 .forEach(System.out::println);
     }
