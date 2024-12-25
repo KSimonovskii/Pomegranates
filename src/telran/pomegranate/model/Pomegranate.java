@@ -17,10 +17,10 @@ public class Pomegranate implements Iterable<Seed> {
         this.seeds = fillPomegranate();
     }
 
-    public List<Seed> getSeeds() {
-        return seeds;
-    }
 
+    public int quantity(){
+        return seeds.size();
+    }
     @Override
     public String toString() {
         return "Pomegranate{" +

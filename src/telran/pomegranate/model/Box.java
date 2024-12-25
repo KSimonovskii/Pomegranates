@@ -26,8 +26,8 @@ public class Box implements Iterable<Pomegranate> {
         return name;
     }
 
-    public List<Pomegranate> getGranates() {
-        return granates;
+    public int quantity(){
+        return granates.size();
     }
 
     private static List<Pomegranate> fillBox(){
@@ -59,13 +59,13 @@ public class Box implements Iterable<Pomegranate> {
 
     public int getSumOfSeeds() {
         return granates.stream()
-                .mapToInt(pomegranate -> pomegranate.getSeeds().size())
+                .mapToInt(Pomegranate::quantity)
                 .sum();
     }
 
     public int getMaxOfSeeds(){
         return granates.stream()
-                .mapToInt(pomegranate -> pomegranate.getSeeds().size())
+                .mapToInt(Pomegranate::quantity)
                 .max()
                 .orElse(0);
     }
