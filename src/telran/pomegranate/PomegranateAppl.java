@@ -33,7 +33,7 @@ public class PomegranateAppl {
         return new Random()
                 .ints(1, 100, 200)
                 .boxed()
-                .map(count -> new Box[count])
+                .map(Box[]::new)
                 .flatMap(Arrays::stream)
                 .map(box -> new Box())
                 .collect(Collectors.toList());
